@@ -6,7 +6,8 @@ from model.Model import Model
 from model.Dataset import Dataset
 
 app = Flask(__name__)
-CORS(app)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
 def hello_world():
@@ -16,8 +17,8 @@ def hello_world():
 def test():
     return jsonify(message = "test")
 
-@app.route('/generate_text', methods = ['POST'])
-@cross_origin(origin='*',headers=['Content- Type','application/json'])
+@app.route('/generate_text/', methods = ['POST'])
+@cross_origin()
 def hello():
     try:
         data = request.get_json()
