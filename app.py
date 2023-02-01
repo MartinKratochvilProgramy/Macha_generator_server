@@ -8,6 +8,21 @@ from model.Dataset import Dataset
 app = Flask(__name__)
 CORS(app)
 
+dataset = Dataset()
+model = Model(
+    vocab_size=dataset.get_vocab_length(),
+    embedding_dim=256,
+    rnn_units=512
+    )
+model.load_weights(tf.train.latest_checkpoint('./model/training_checkpoints'))
+one_step_model = OneStep(
+    model = model, 
+    chars_from_ids = dataset.chars_from_ids, 
+    ids_from_chars = dataset.ids_from_chars,
+    temperature = 0.001
+)
+app.run(debug=True, host="localhost", port=3000)
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
