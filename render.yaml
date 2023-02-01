@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: mysite
+    name: macha-generator
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn mysite.wsgi:application"
+    startCommand: "gunicorn macha_generator_server.wsgi:application"
