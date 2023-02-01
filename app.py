@@ -12,13 +12,14 @@ CORS(app)
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/test')
+@app.route('/test/')
 def test():
     return jsonify(message = "test")
 
 @app.route('/generate_text/', methods = ['POST'])
 @cross_origin()
-def hello():
+def generate_text():
+    print("GOT GENERATE REQ")
     try:
         data = request.get_json()
 
