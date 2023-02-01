@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import tensorflow as tf
 from model.OneStep import OneStep 
 from model.Model import Model
@@ -12,7 +12,12 @@ CORS(app)
 def hello_world():
     return 'Hello, World!'
 
+@app.route('/test')
+def hello_world():
+    return jsonify("test")
+
 @app.route('/generate_text', methods = ['POST'])
+@cross_origin(origin='*',headers=['Content- Type','application/json'])
 def hello():
     try:
         data = request.get_json()
