@@ -1,0 +1,50 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-input {
+    padding: 4px;
+    max-width: 300px;
+    display: flex;
+    width: 100%;
+}
+
+.number-input {
+    width: 50px;
+    padding: 2px;
+}
+
+.input-field {
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    margin-top: 2px;
+    padding: 4px 8px 4px 8px;
+}
+
+.input-form {
+    display: flex;
+    width: 100%;
+    padding: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}   
+
+.invalid-input {
+    border: solid 1px red;
+}

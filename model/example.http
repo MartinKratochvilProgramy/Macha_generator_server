@@ -1,0 +1,7 @@
+POST http://localhost:3000/get_text
+content-type: application/json
+
+{
+    "input-string": "Máj",
+    "length": "500"
+}
