@@ -13,7 +13,7 @@ def hello_world():
     return 'Hello, World!'
 
 @app.route('/test')
-def hello_world():
+def test():
     return jsonify(message = "test")
 
 @app.route('/generate_text', methods = ['POST'])
