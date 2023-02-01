@@ -1,3 +1,4 @@
+[project]
 name = "macha-generator"
 version = "0.1.0"
 description = "Web server for the Macha generator app"
