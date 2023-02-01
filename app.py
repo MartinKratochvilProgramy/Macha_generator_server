@@ -6,8 +6,7 @@ from model.Model import Model
 from model.Dataset import Dataset
 
 app = Flask(__name__)
-cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app)
 
 @app.route('/')
 def hello_world():
