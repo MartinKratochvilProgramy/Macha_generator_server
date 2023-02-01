@@ -14,7 +14,7 @@ def hello_world():
 
 @app.route('/test')
 def hello_world():
-    return jsonify("test")
+    return jsonify(message = "test")
 
 @app.route('/generate_text', methods = ['POST'])
 @cross_origin(origin='*',headers=['Content- Type','application/json'])
